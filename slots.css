@@ -1,0 +1,55 @@
+body {
+    background-color: blue;
+}
+
+
+.box {
+    background-color: white;
+    width: 100px;
+    display: inline;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px;
+}
+
+#nums {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Impact;
+    text-align: center;
+    font-size: 100px;
+    
+    background-color: blue;
+}
+
+#spin {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 250px;
+    
+    text-align: center;
+    font-family: Impact;
+    font-size: 50px;
+        
+    background-color: white;
+    box-shadow: 10px 10px 10px #000000;
+}
+
+#info {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 170px;
+    
+    text-align: center;
+    font-family: Impact;
+    
+    background-color: white;
+    box-shadow: 10px 10px 10px #000000;
+}
+
+h1 {
+    text-decoration: underline;
+}

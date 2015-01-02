@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Slots</title>
+        <link rel="stylesheet" href="slots.css">
+    </head>
+    
+    <body>
+        <div id="nums">   
+            <div class="box" id="num1">0</div>
+            <div class="box" id="num2">0</div>
+            <div class="box" id="num3">0</div>
+        </div>
+    </body>
+    
+    <div id="spin" onclick="spin()">
+    SPIN
+    </div>
+    
+    <div id="info">
+        <h1>STATS</h1>
+        
+        <p id="stats">
+        <p id="money">MONEY:&nbsp;&nbsp;&nbsp;$0<br></p>
+        <p id="tries">TRIES:&nbsp;&nbsp;&nbsp;10<br></p>
+        <p id="highscore">HIGHSCORE:&nbsp;&nbsp;&nbsp;0<br></p>
+        </p>
+    </div>
+    
+    <script>
+        
+        var tries = 10
+        var money = 0
+        var highscore = 0
+    
+        function spin() {
+            var num1 = Math.floor(Math.random()*3)
+            var num2 = Math.floor(Math.random()*3)
+            var num3 = Math.floor(Math.random()*3)
+            
+            
+            if (tries > 1) {
+                
+                if (num1 == num2 && num1 == num3) {
+                
+                if (num1 == 0) {
+                    money += 100
+                }
+                
+                if (num1 == 1) {
+                    money += 200
+                }
+                
+                if (num1 == 2) {
+                    money += 300
+                }
+            }
+            
+            tries -= 1
+            
+            document.getElementById("num1").innerHTML = num1
+            document.getElementById("num2").innerHTML = num2
+            document.getElementById("num3").innerHTML = num3
+            
+            document.getElementById("money").innerHTML = "MONEY:&nbsp;&nbsp;&nbsp;$" + money + "<br>"
+            
+            document.getElementById("tries").innerHTML = "TRIES:&nbsp;&nbsp;&nbsp;"+ tries + "<br>"
+            
+            
+            }else if (tries == 1) {
+                
+            tries -= 1
+                
+            document.getElementById("num1").innerHTML = num1
+            document.getElementById("num2").innerHTML = num2
+            document.getElementById("num3").innerHTML = num3
+            
+            document.getElementById("money").innerHTML = "MONEY:&nbsp;&nbsp;&nbsp;$" + money + "<br>"
+            
+            document.getElementById("tries").innerHTML = "TRIES:&nbsp;&nbsp;&nbsp;"+ tries + "<br>"
+            
+            document.getElementById("spin").innerHTML = "BEGIN"
+            
+            
+            }else {
+            
+                if (money > highscore) {
+                    highscore = money
+                }
+                
+                tries = 10
+                money = 0
+                
+                document.getElementById("highscore").innerHTML = "HIGHSCORE:&nbsp;&nbsp;&nbsp;$" + highscore +"<br>"
+                
+                document.getElementById("money").innerHTML = "MONEY:&nbsp;&nbsp;&nbsp;$" + money + "<br>"
+            
+                document.getElementById("tries").innerHTML = "TRIES:&nbsp;&nbsp;&nbsp;"+ tries + "<br>"
+                
+                document.getElementById("spin").innerHTML = "SPIN"
+        }
+        }
+        
+        
+    </script>
+    
+</html>
